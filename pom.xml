@@ -367,6 +367,17 @@
     <!-- define build -->
     <plugins>
 
+<!--      &lt;!&ndash; Setup testing &ndash;&gt;-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <includes>-->
+<!--            <include>**/TestAllPackages.java</include>-->
+<!--          </includes>-->
+<!--          &lt;!&ndash;argLine>-Djava.security.manager -Djava.security.policy=${basedir}/src/test/resources/java.policy</argLine&ndash;&gt;-->
+<!--        </configuration>-->
+<!--      </plugin>-->
 
       <!-- INCLUDE: JAVAMOP PLUGIN -->
       <plugin>
@@ -374,6 +385,9 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.1</version>
         <configuration>
+          <includes>
+            <include>**/TestAllPackages.java</include>
+          </includes>
           <argLine>-javaagent:${settings.localRepository}/javamop-agent/javamop-agent/1.0/javamop-agent-1.0.jar</argLine>
         </configuration>
       </plugin>
@@ -452,17 +466,6 @@
             <argument>etcetera</argument>
             <argument>backward</argument>
           </arguments>
-        </configuration>
-      </plugin>
-      <!-- Setup testing -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <includes>
-            <include>**/TestAllPackages.java</include>
-          </includes>
-          <!--argLine>-Djava.security.manager -Djava.security.policy=${basedir}/src/test/resources/java.policy</argLine-->
         </configuration>
       </plugin>
       <!-- Setup Jar file manifest entries -->
@@ -1045,7 +1048,7 @@
     <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
     <maven-enforcer-plugin.version>3.0.0-M1</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+<!--    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>-->
     <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
     <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
     <maven-jxr-plugin.version>2.5</maven-jxr-plugin.version>
